@@ -1,0 +1,46 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WinPhone_HS_App.SignUpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    Background="FloralWhite" OrientationChanged="OrientationChanged">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="FloralWhite" Margin="-70,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="25,17,0,28">
+            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Sign Up!" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF1F48FF" FontFamily="Lucida Fax"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="25,0,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Margin="0">
+                <TextBox x:Name="userName_TextBox" TextWrapping="Wrap" Text="UserName" BorderBrush="#FF436DFF" FontSize="30" TextChanged="userName_TextBox_TextChanged"/>
+                <TextBox x:Name="userNameCon_TextBox" TextWrapping="Wrap" Text="UserName" BorderBrush="#FF436DFF" FontSize="30" TextChanged="userNameCon_TextBox_TextChanged"/>
+            </StackPanel>
+            <Button x:Name="Confirm_Button" Content="Confirm" Margin="0,20,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="28" Background="#FF1C59FB" BorderBrush="#FF6A7FFF" Click="Button_Click" IsEnabled="False"/>
+            <Button x:Name="Confirm_Button_Cop" Content="Confirm" Margin="0,20,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="28" Background="#FF698FF5" BorderBrush="#FF6A7FFF" Click="Button_Click" IsHitTestVisible="False"/>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

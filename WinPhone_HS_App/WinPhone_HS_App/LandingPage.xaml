@@ -1,0 +1,69 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WinPhone_HS_App.LandingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Landscape"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <phone:Pivot Title="MY APPLICATION">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="Profile">
+                <StackPanel Orientation="Horizontal" Margin="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Border BorderBrush="Black" BorderThickness="1" Height="230" Width="230" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Image x:Name="userProfile_Image"/>
+                        </Border>
+                        <Button x:Name="editProfile_Button" Content="Edit" Margin="20,0,0,0" Grid.Row="1" BorderThickness="3" Padding="0"/>
+
+                    </Grid>
+                    
+                    
+                    <Grid Margin="20,0,0,0" Width="300">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="165*"/>
+                            <ColumnDefinition Width="124*"/>
+                            <ColumnDefinition Width="11*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="User Name:" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBlock x:Name="userName_TextBlock" Text="UserName" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" />
+                        <TextBlock Text="Total Points:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-1,52,0,0" />
+                        <TextBlock x:Name="totalPoints_TextBlock" Text="Total Points" HorizontalAlignment="Left" Margin="0,52,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                        <TextBlock Text="High Score:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-1,107,0,0" />
+                        <TextBlock x:Name="highScore_TextBlock" Text="High Score" HorizontalAlignment="Left" Margin="0,107,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                        <TextBlock x:Name="was_TextBlock" Text="Sphero Wins" HorizontalAlignment="Left" Margin="0,139,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                        <TextBlock Text="Wins as Sphero:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,139,0,0" />
+                        <TextBlock Text="Wins as Drone:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,215,0,0" />
+                        <TextBlock x:Name="wad_TextBlock" Text="Drone Wins" HorizontalAlignment="Left" Margin="0,215,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                        
+                    </Grid>
+
+                </StackPanel>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="Friends">
+                <Grid/>
+            </phone:PivotItem>
+            <phone:PivotItem Header="Games">
+                <Grid/>
+            </phone:PivotItem>
+
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>

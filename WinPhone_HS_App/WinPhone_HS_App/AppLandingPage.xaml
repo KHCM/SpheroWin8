@@ -1,0 +1,60 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WinPhone_HS_App.AppLandingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Landscape"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="FloralWhite" Margin="-71,0,0,0">
+        <!--Pivot Control-->
+        <phone:Pivot Margin="0,-20,0,0" Foreground="#FF002EFF">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="Play" Margin="0,0,0,0" HorizontalAlignment="Left">
+                <Grid>
+                    <Button x:Name="drone_Button" Content="Button" Margin="49,10,0,0" Height="106" Width="201" Background="#FF1454FF" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Button x:Name="sphero_Button" Content="Button" Margin="460,217,0,0" Height="106" Width="201" Background="#FF1454FF" HorizontalAlignment="Left" VerticalAlignment="Top" Click="sphero_Button_Click"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="Profile" Margin="10,24,14,4">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="316*"/>
+                        <ColumnDefinition Width="229*"/>
+                        <ColumnDefinition Width="230*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1" Margin="0" Grid.ColumnSpan="2">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="High Score" VerticalAlignment="Top" Grid.Column="1" FontSize="30"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Total Score" VerticalAlignment="Top" Grid.Column="1" FontSize="30"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Total Games" VerticalAlignment="Top" Grid.Column="1" FontSize="30" FontFamily="Portable User Interface"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Sphero Wins" VerticalAlignment="Top" Grid.Column="1" FontSize="30"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Drone Wins" VerticalAlignment="Top" Grid.Column="1" FontSize="30"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Margin="0">
+                        <TextBlock x:Name="highScore_TextBlock" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="High Score" VerticalAlignment="Top" Grid.Column="1" FontSize="30"/>
+                        <TextBlock x:Name="totalScore_TextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Total Score" VerticalAlignment="Top" Grid.Column="1" FontSize="30"/>
+                        <TextBlock x:Name="totalGames_TextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Total Games" VerticalAlignment="Top" Grid.Column="1" FontSize="30"/>
+                        <TextBlock x:Name="spheroWins_TextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Sphero Wins" VerticalAlignment="Top" Grid.Column="1" FontSize="30"/>
+                        <TextBlock x:Name="droneWins_TextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Drone Wins" VerticalAlignment="Top" Grid.Column="1" FontSize="30"/>
+                    </StackPanel>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="250" Margin="0" VerticalAlignment="Top" Width="250">
+                        <Image x:Name="profileImage"/>
+                    </Border>
+                    <Button Grid.Column="0" Content="Edit" Margin="0" VerticalAlignment="Bottom" Background="#FF002EFF" BorderThickness="2"/>
+
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>
